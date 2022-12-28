@@ -1,0 +1,330 @@
+
+:root{
+	/* weird calculation to visually center the content in the available space */
+	--headerheight: max(2rem, min(6.7vh, 3.35vw));
+	--spacing: 1em;
+	--fz: max(1rem, min(4vh, 2vw));
+}
+
+/* hard reset :) */
+*, *::after, *::before{
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	box-sizing: border-box;
+	border: 0;
+	vertical-align: baseline;
+}
+html {height: 100%; background: white;}
+body{ margin:0; overflow:hidden; }
+article { position:absolute; top:0; left:0; right:0; bottom:0; display:none; flex-direction: column; justify-content: center; align-items: flex-start;}
+nav { position:fixed; left:0; bottom:0; padding:10px; z-index:100; }
+.btn{ background:rgba(255,255,255,.8); margin:5px; padding:0 10px; font-size:1.5rem; line-height:1.1; color:black; float:left }
+
+/* articles are hidden ; only.visible is shown */
+article.visible{ display:flex;  }
+
+
+body{
+	font-family: 'Source Serif VF';
+	text-rendering:optimizeLegibility;
+	-webkit-font-smoothing:antialiased;
+	-moz-osx-font-smoothing:grayscale;
+	background:#000;
+	color:white;	
+	font-variant: historical-ligatures;
+	height: 100%;
+	font-feature-settings: "hlig" 1, "dlig" 1, "onum" 1, "zero" 1, "swsh" 1, "kern" 1, "medi" 1;
+	letter-spacing: -0.004em;
+
+}
+
+article {
+	text-align:left;
+	font-size:clamp(1.2rem, 4vw, 2rem);
+	font-size:2vw;
+	font-size: var(--fz);
+}
+header, footer  { 
+	position: fixed;
+	z-index: 2;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding: .5em var(--spacing);
+	font-variation-settings: "opsz" 30;
+	font-size: .85em;
+	color: rgba(255,255,255,.8);
+	display: flex;
+	justify-content: space-between;
+	height: var(--headerheight);
+	overflow: hidden;
+	line-height: 1;
+	background: #000;
+}
+
+footer {
+	top: auto;
+	bottom: 0;
+}
+footer p {
+	margin: 0;
+	max-width: none;
+}
+
+#article-0 {
+	text-align: center;
+	align-items: center;
+}
+
+h1 {
+	font-weight: normal;	
+	font-size: 5em;
+	margin: .25em 0;
+	line-height: .9;	
+}
+article h1,
+article h2 {
+	font-variation-settings: 'opsz' 60;
+}
+.media { 
+	height: 100%; width: 100%;
+	overflow-y: hidden;
+}
+.media.scroll {
+	overflow-y: scroll;
+}
+.media img{
+	height: 100%; width: 100%;
+	object-fit: cover;
+	object-position: center var(--position, calc( var(--headerheight)));
+}
+.media.scroll img {
+	overflow-y: scroll;
+	object-fit: unset;
+	height: auto;
+}
+.media.white{
+	background: var(--bg, white);
+}
+.contain  {
+	padding: 1em;
+	padding-top: calc(var(--headerheight) + 1em);
+}
+.contain img {
+	object-position: center;
+	object-fit: contain;
+	/* width: ; */
+}
+
+blockquote p::before {
+	content: "«\202F";
+}
+blockquote p::after {
+	content: "\202F»";
+}
+.title {
+	background: yellow;
+	color: black;
+	align-items: center;
+}
+h2 {
+	font-weight: normal;
+	font-size: 5em;
+	text-align: center;
+	line-height: .9;
+}
+h3{
+	text-transform: uppercase;
+	font-style: normal;
+	font-size: 1em;
+	font-family: monospace;
+	font-variation-settings: "opsz" 0;
+	margin-bottom: .5em;
+}
+.title h2 .i path{
+	fill: black;
+}
+
+a { color: currentColor; text-decoration: none;}
+header a { text-shadow: 3px 0px black, -3px 0 black, -3px 0 3px black; line-height: .9; display: inline-block;}
+header a {border-bottom: 1px solid rgb(156, 150, 150);}
+/* Taille par défaut des images et vidéos */
+.video {
+	width: 100%;
+	height: 100%;
+}
+video {width:100%; height:100%; object-fit:cover; object-position: top; margin:0 auto; display:block }
+
+
+.media .srt {
+	position: absolute;
+	z-index: 2;
+	width: 100%;
+	bottom: 0;
+	left: 0;
+	padding: 1em;
+	font-size: 1.5em;
+	line-height: 1.1;
+	font-weight: 500;
+	background: linear-gradient(to top, rgba(0,0,0,1) rgba(0,0,0,0));
+	background: radial-gradient(circle at 0% 100% , rgb(0, 0, 0), rgba(0,0,0,0) 70%);
+	height: 100%;
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-end;
+	flex-direction: column;
+}
+.srt p { margin: 0; align-self: flex-start;}
+
+/* Images “fullscreen” */
+.cover { width:100%; height:100%; object-fit:cover; }
+
+/* Taille du texte */
+.smalltext{ font-size:2vw; line-height:1.4}
+.bigtext{ font-size:2em; line-height:1.1}
+.hugetext{ font-size:16vw; line-height:1}
+
+p {
+	max-width: 40ch;
+	margin: 0 auto;
+	align-self: center;
+}
+blockquote {
+	font-style: italic;
+	margin: 0 auto;
+	align-self: center;
+	padding: 0 var(--spacing);
+}
+.notquote{
+	margin: 0 auto;
+	align-self: center;
+}
+
+blockquote i, blockquote em,
+em i, em em,
+i i, i em  { font-style: normal;}
+
+blockquote p {
+	text-indent: -0.6em;
+}
+
+
+mark {
+	padding: 0 .15em;
+	line-height: 1;
+	background: url(yellow-nocorner.svg) repeat-x 0 76%;
+	background-size: 1.05em;
+	text-indent: 0;
+	background-blend-mode: lighten;
+	box-decoration-break: clone;
+	-webkit-box-decoration-break: clone;
+	position: relative;
+}
+
+mark::before{
+	background: url(yellow.svg) no-repeat 0 68%;
+	left: -.25em;
+	background-size: var(--pos);
+}
+
+cite { font-size: .75em; text-align: right; display: block;}
+
+big {
+	display: block;
+	text-align: center;
+	width: 100%;
+	padding: 2em;
+	cursor: pointer;
+}
+
+/* intégration youtube, vimeo, etc. */
+
+.embedded { height: 100%; width: 100%; position: relative; background: #fff; }
+.embedded iframe { position: absolute; top: var(--headerheight); left: 0; width: 100%; height: 100%; }
+
+
+
+
+/* custom scrollbars */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+ 
+::-webkit-scrollbar-thumb {
+  background: #666;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000;
+  border-radius: 20px;
+}
+
+
+.grid {
+	overflow: auto;
+	background: #eee;
+	padding: 2em;
+}
+.grid main {
+	display: grid;
+	grid-template-columns: repeat(6,1fr);
+	gap: 2em;
+}
+.grid article {
+	display: flex;
+	position: relative;
+	/* transform: scale(.8); */
+	overflow: hidden;
+	font-size: calc(2vw / 6);
+	background: black;
+	aspect-ratio: 16 / 9;
+	padding-top: 0;
+	/* border: 1px solid black; */
+	box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+	box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}  
+.grid article.title {
+	background: yellow;
+}
+.grid article::after {
+  position: absolute;
+	left: 0;
+  top: 0;
+  font-size: 19px;
+  content: attr(data-id);
+  background: black;
+  width: 3ch;
+  text-align: center;
+
+}
+.grid article header, 
+.grid article footer {
+	display: none;
+}
+.grid article:not(#article-0) {
+	padding-top: 0;
+}
+
+.grid .contain {padding-top: 0;}
+
+.grid .media img { object-position: center;}
+
+
+.grid article .embed {
+
+	align-self: center;
+}
+.grid article .embed::after {
+	content:attr(rel);
+	align-self: center;
+	text-align: center;
+	font-size: 2.5em;
+	display: block;
+	margin: 0 auto;
+	color: yellow;
+}
+
+footer span:first-child{ transform: rotate(-125deg);}

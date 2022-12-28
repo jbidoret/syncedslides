@@ -1,2 +1,4 @@
 media/*
 pages/*
+!media/.gitkeep
+!pages/.gitkeep

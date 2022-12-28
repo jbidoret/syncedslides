@@ -18,6 +18,8 @@ Navigation events are broadcasted to both `slides.html` and `text.html` via `fra
 
 Navigation logic lies in `js/pechakucha.js`.
 
+Popup opening and autoplay of sound and video should be allowed from localhost.
+
 
 ## Text
 

@@ -1,4 +1,4 @@
-# SlideSystem
+# Synced slides
 
 A raw HTML slideshow system with synced text and slides on one screen and slides on another.
 

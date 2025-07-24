@@ -1,10 +1,10 @@
-# Slidesystem — Rencontres de Lure 2022
+# SlideSystem
 
 A raw HTML slideshow system with synced text and slides on one screen and slides on another.
 
 Aka, reinvent the wheel or be bored.
 
-This script has been procuced for the 70’s Rencontres internationales de Lure. It can be viewed online at [radicalweb.design/lure](https://radicalweb.design/lure) but might better be read in an updated textual version here: [radicalweb.design/fr/notes/rencontres-de-lure](https://radicalweb.design/fr/notes/rencontres-de-lure).
+This script has been procuced for the 70th [Rencontres internationales de Lure](https://delure.org). It can  ++no more++ be viewed online at ~~[radicalweb.design/lure](https://radicalweb.design/lure)~~ but might better be read in an updated textual version here: [radicalweb.design/fr/notes/rencontres-de-lure](https://radicalweb.design/fr/notes/rencontres-de-lure).
 
 
 ## Start
@@ -53,7 +53,7 @@ Every slide is an article, typically:
 
 A running title is injected in each `<header>`. Its value is set in a `<script>` in `slides.html`.
 
-### Contents types
+### Content types
 
 Content can be an image, a video, a text or an iframe:
 
@@ -69,16 +69,16 @@ Iframes can be full absolute URLs or local copies ([Single file](https://github.
 - `.bigtext`, obviously, makes text big; `.smalltext`, small; and `.hugetext`, huge!
 - `.contain` makes media be contained; with `.cover`, media covers the space.
 - `.white` sets the slide background to white.
-- If a `--bg:#ACCABB` cutom property is passed through a style attribute, its value is set as the slide background-color.
+- If a `--bg:#ACCABB` custom property is passed through a style attribute, its value is set as the slide background-color.
 - `.scroll` makes media scrollable
 
 ## Credits
 
-Based on [Pecha Kucha](https://github.com/esadpyrenees/pechakucha) template.
+Based on [Pecha Kucha](https://codeberg.org/julienbidoret/pechakucha) template.
 
-Typeset in [Source serif](https://adobe-fonts.github.io/source-serif/) by Frank Grießhammer and friends.
+Typeset in [Source serif](https://adobe-fonts.github.io/source-serif/) by Frank Grießhammer and friends, licensed under the SIL Open Font License, Version 1.1. and [available here](https://github.com/adobe-fonts/source-serif/tree/main).
 
-The javascript code and logic is freely available throungh the wonderful terms of UNLICENSE.
+The javascript code and logic is freely available throungh the wonderful terms of [UNLICENSE](https://unlicense.org/).
 
-The content of `text.html` is available throught [CC BY-SA](https://creativecommons.org/licenses/by-sa/2.0/), but might better be read online at [radicalweb.design](https://radicalweb.design/fr/notes/rencontres-de-lure).
+The content of `text.html` is available throught [CC BY-SA](https://creativecommons.org/licenses/by-sa/2.0/), but might better be read online at [radicalweb.design](https://radicalweb.design/recherche/notes/rencontres-de-lure/).
 
